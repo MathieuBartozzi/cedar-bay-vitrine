@@ -937,6 +937,8 @@ html:not([data-year="2028"]) .only-28{display:none!important}
 .bar-lang button[aria-pressed="true"]{background:var(--bar-fg);color:var(--bar-bg)}
 .bar-lang button:not([aria-pressed="true"]):hover{color:var(--bar-fg)}
 html[lang="en"] .tr-fr{display:none}
+html[lang="en"] .fr-only{display:none!important}
+html:not([lang="en"]) .en-only{display:none!important}
 html[lang="en"] .ve-cam .box::before{content:"FACE · TRACKING"}
 .bar-code{align-self:center;display:grid;place-items:center;width:34px;height:34px;border-radius:50%;border:1px solid var(--bar-hi);background:transparent;color:var(--bar-muted);cursor:pointer;flex:none}
 .bar-code:hover{color:var(--bar-fg);background:var(--bar-hi)}
@@ -1176,6 +1178,12 @@ html[lang="en"] .ve-cam .box::before{content:"FACE · TRACKING"}
   .fc{grid-template-columns:1fr;border:1.5px dashed #000000;min-height:120px;break-inside:avoid}
   .fc-n,.fc-d,.fr-score,.fc-grip{display:none!important}
 }
+
+/* Grille bénéfice-risque (vue #grille) */
+.grille-row{border-top:1px solid var(--hub-line);padding:14px 0;min-width:0}
+.grille-row h3{font:700 17px/1.3 var(--f-hub);margin:0 0 6px}
+.grille-row ul{margin:0;padding-left:20px}
+.grille-row li{margin:0 0 6px;font-size:16px;line-height:1.5;overflow-wrap:anywhere}
 </style>
 </head>
 <body>
@@ -1239,6 +1247,8 @@ html[lang="en"] .ve-cam .box::before{content:"FACE · TRACKING"}
       <a class="bar-tab" href="#lumi"><i class="dot dot-lu"></i>Lumi</a>
       <a class="bar-tab" href="#veriscript"><i class="dot dot-ve"></i>Veriscript</a>
       <a class="bar-tab" href="#concierge"><i class="dot dot-co"></i>Concierge</a>
+      <a class="bar-tab only-28" href="#grille"><span class="fr-only">Grille</span><span class="en-only">Grid</span></a>
+      <a class="bar-tab only-28" href="#biblio"><span class="fr-only">Bibliographie</span><span class="en-only">Bibliography</span></a>
     </nav>
     <div class="bar-lang" id="langSw" role="group"><button type="button" data-lang="en">EN</button><button type="button" data-lang="fr">FR</button></div>
     <button class="bar-code" id="codeOpen" type="button" aria-label="Enter a workshop code" title="Workshop code"><svg><use href="#i-key"/></svg></button>
@@ -1380,6 +1390,66 @@ html[lang="en"] .ve-cam .box::before{content:"FACE · TRACKING"}
   <footer class="hub-foot"><div class="wrap fic">Teaching simulation for the workshop “June 2028: How did we get here?”, MLF seminar, Boston. The school, vendors, products, figures and testimonials are fictional.</div></footer>
 </section>
 
+<!-- ================= GRILLE (2028), contenu lu dans grille.json ================= -->
+<section data-view="grille" class="only-28" hidden>
+<div class="wrap biblio-wrap">
+<article class="memo">
+  <h2 class="fr-only">La grille bénéfice-risque</h2>
+  <h2 class="en-only">The benefit-risk grid</h2>
+  <div id="grilleBox" aria-live="polite"></div>
+</article>
+</div>
+</section>
+
+<!-- ================= BIBLIOGRAPHIE (2028) ================= -->
+<section data-view="biblio" class="only-28" hidden>
+<div class="wrap biblio-wrap">
+<article class="memo fr-only">
+  <h2>Sources et bibliographie</h2>
+  <p>Les quatre épisodes s'inspirent librement de faits réels, sans les citer. Voici les sources des chiffres et des cas évoqués.</p>
+  <h3>Données citées</h3>
+  <ol class="refs">
+    <li>OCDE (2026), <i>OECD Digital Education Outlook 2026: Exploring Effective Uses of Generative AI in Education</i>. <a href="https://www.oecd.org/en/publications/oecd-digital-education-outlook-2026_062a7394-en.html" target="_blank" rel="noopener">oecd.org</a></li>
+    <li>Synthèse du rapport OCDE par la plateforme européenne Digital Skills and Jobs. <a href="https://digital-skills-jobs.europa.eu/en/latest/news/oecd-digital-education-outlook-2026-how-generative-ai-can-support-learning-when-used" target="_blank" rel="noopener">digital-skills-jobs.europa.eu</a></li>
+    <li>Bastani H. et al. (2025), « Generative AI without guardrails can harm learning », <i>PNAS</i> 122 (26). Chiffres rapportés par Knowledge at Wharton. <a href="https://knowledge.wharton.upenn.edu/article/without-guardrails-generative-ai-can-harm-education/" target="_blank" rel="noopener">knowledge.wharton.upenn.edu</a></li>
+    <li>Alpha School : informations générales (modèle, campus, critiques sur l'absence d'évaluation indépendante). <a href="https://en.wikipedia.org/wiki/Alpha_School" target="_blank" rel="noopener">wikipedia.org</a></li>
+  </ol>
+  <h3>Faits réels ayant inspiré les épisodes</h3>
+  <ol class="refs">
+    <li><b>Note finale.</b> Erreur de notation par IA de l'examen MCAS, Massachusetts (Boston.com, 17 septembre 2025). <a href="https://www.boston.com/news/education/2025/09/17/mcas-essays-scored-incorrectly-ai-mishap/" target="_blank" rel="noopener">boston.com</a></li>
+    <li><b>Note finale.</b> Abandon de l'algorithme de notation des examens au Royaume-Uni (Ofqual, août 2020).</li>
+    <li><b>Lumi.</b> Character.AI ferme les conversations libres aux moins de 18 ans (Fortune, 29 octobre 2025). <a href="https://fortune.com/2025/10/29/character-ai-ban-children-teens-chatbots-regulatory-pressure-age-verification-online-harms" target="_blank" rel="noopener">fortune.com</a></li>
+    <li><b>Lumi.</b> Alpha School (voir ci-dessus) ; UNESCO (2023), <i>Guidance for generative AI in education and research</i> (âge minimum de 13 ans recommandé).</li>
+    <li><b>Score d'authenticité.</b> Affaire Thélyson Orélien et le détecteur Pangram, retrait de la sélection du prix Goncourt (L-Post, septembre 2026). <a href="https://lpost.be/pangram-le-logiciel-qui-a-bouscule-le-goncourt-que-vaut-le-detecteur-dia-au-coeur-de-laffaire-thelyson-orelien/" target="_blank" rel="noopener">lpost.be</a></li>
+    <li><b>Score d'authenticité.</b> Liang W. et al. (2023), « GPT detectors are biased against non-native English writers », <i>Patterns</i>.</li>
+    <li><b>Concierge.</b> Effondrement du chatbot « Ed » de Los Angeles Unified (The 74, 28 juillet 2024). <a href="https://www.the74million.org/article/la-unified-faces-criticism-after-collapse-of-splashy-ai-tool-ed/" target="_blank" rel="noopener">the74million.org</a></li>
+    <li><b>Concierge.</b> Moffatt c. Air Canada, tribunal civil de Colombie-Britannique (février 2024), sur la responsabilité d'une entreprise pour les réponses de son chatbot.</li>
+  </ol>
+</article>
+<article class="memo en-only">
+  <h2>Sources and bibliography</h2>
+  <p>The four episodes are loosely inspired by real events, without citing them. Here are the sources for the figures and cases mentioned.</p>
+  <h3>Data cited</h3>
+  <ol class="refs">
+    <li>OECD (2026), <i>OECD Digital Education Outlook 2026: Exploring Effective Uses of Generative AI in Education</i>. <a href="https://www.oecd.org/en/publications/oecd-digital-education-outlook-2026_062a7394-en.html" target="_blank" rel="noopener">oecd.org</a></li>
+    <li>Summary of the OECD report by the European platform Digital Skills and Jobs. <a href="https://digital-skills-jobs.europa.eu/en/latest/news/oecd-digital-education-outlook-2026-how-generative-ai-can-support-learning-when-used" target="_blank" rel="noopener">digital-skills-jobs.europa.eu</a></li>
+    <li>Bastani H. et al. (2025), "Generative AI without guardrails can harm learning", <i>PNAS</i> 122 (26). Figures as reported by Knowledge at Wharton. <a href="https://knowledge.wharton.upenn.edu/article/without-guardrails-generative-ai-can-harm-education/" target="_blank" rel="noopener">knowledge.wharton.upenn.edu</a></li>
+    <li>Alpha School: general information (model, campuses, criticism over the lack of independent evaluation). <a href="https://en.wikipedia.org/wiki/Alpha_School" target="_blank" rel="noopener">wikipedia.org</a></li>
+  </ol>
+  <h3>Real events that inspired the episodes</h3>
+  <ol class="refs">
+    <li><b>Final Grade.</b> AI scoring error on the MCAS state exam, Massachusetts (Boston.com, 17 September 2025). <a href="https://www.boston.com/news/education/2025/09/17/mcas-essays-scored-incorrectly-ai-mishap/" target="_blank" rel="noopener">boston.com</a></li>
+    <li><b>Final Grade.</b> Abandonment of the exam-grading algorithm in the United Kingdom (Ofqual, August 2020).</li>
+    <li><b>Lumi.</b> Character.AI closes open-ended conversations to users under 18 (Fortune, 29 October 2025). <a href="https://fortune.com/2025/10/29/character-ai-ban-children-teens-chatbots-regulatory-pressure-age-verification-online-harms" target="_blank" rel="noopener">fortune.com</a></li>
+    <li><b>Lumi.</b> Alpha School (see above); UNESCO (2023), <i>Guidance for generative AI in education and research</i> (recommended minimum age of 13).</li>
+    <li><b>Authenticity Score.</b> The Thélyson Orélien affair and the Pangram detector, withdrawal from the Goncourt prize shortlist (L-Post, September 2026). <a href="https://lpost.be/pangram-le-logiciel-qui-a-bouscule-le-goncourt-que-vaut-le-detecteur-dia-au-coeur-de-laffaire-thelyson-orelien/" target="_blank" rel="noopener">lpost.be</a></li>
+    <li><b>Authenticity Score.</b> Liang W. et al. (2023), "GPT detectors are biased against non-native English writers", <i>Patterns</i>.</li>
+    <li><b>Concierge.</b> Collapse of the "Ed" chatbot at Los Angeles Unified (The 74, 28 July 2024). <a href="https://www.the74million.org/article/la-unified-faces-criticism-after-collapse-of-splashy-ai-tool-ed/" target="_blank" rel="noopener">the74million.org</a></li>
+    <li><b>Concierge.</b> Moffatt v. Air Canada, British Columbia Civil Resolution Tribunal (February 2024), on a company's liability for what its chatbot says.</li>
+  </ol>
+</article>
+</div>
+</section>
 <!-- ================= CORRECTA ================= -->
 <section data-view="correcta" class="site site-cr" hidden>
 <div class="notice only-28"><div class="wrap"><svg><use href="#i-alert"/></svg><span><b>Notice to schools.</b> Grading discrepancies were found on some long-form exams graded between March 4 and May 6, 2028. The incident has been resolved.</span></div></div>
@@ -2933,6 +3003,8 @@ html[lang="en"] .ve-cam .box::before{content:"FACE · TRACKING"}
       <a class="bar-tab" href="#lumi"><i class="dot dot-lu"></i>Lumi</a>
       <a class="bar-tab" href="#veriscript"><i class="dot dot-ve"></i>Veriscript</a>
       <a class="bar-tab" href="#concierge"><i class="dot dot-co"></i>Concierge</a>
+      <a class="bar-tab only-28" href="#grille"><span class="fr-only">Grille</span><span class="en-only">Grid</span></a>
+      <a class="bar-tab only-28" href="#biblio"><span class="fr-only">Bibliographie</span><span class="en-only">Bibliography</span></a>
     </nav>
     <div class="bar-lang" id="langSw" role="group"><button type="button" data-lang="en">EN</button><button type="button" data-lang="fr">FR</button></div>
     <button class="bar-code" id="codeOpen" type="button" aria-label="Saisir un code atelier" title="Code atelier"><svg><use href="#i-key"/></svg></button>
@@ -3074,6 +3146,66 @@ html[lang="en"] .ve-cam .box::before{content:"FACE · TRACKING"}
   <footer class="hub-foot"><div class="wrap fic">Simulation pédagogique pour l'atelier « Juin 2028 : comment en est-on arrivé là ? », séminaire MLF de Boston. L'établissement, les éditeurs, les produits, les chiffres et les témoignages sont fictifs.</div></footer>
 </section>
 
+<!-- ================= GRILLE (2028), contenu lu dans grille.json ================= -->
+<section data-view="grille" class="only-28" hidden>
+<div class="wrap biblio-wrap">
+<article class="memo">
+  <h2 class="fr-only">La grille bénéfice-risque</h2>
+  <h2 class="en-only">The benefit-risk grid</h2>
+  <div id="grilleBox" aria-live="polite"></div>
+</article>
+</div>
+</section>
+
+<!-- ================= BIBLIOGRAPHIE (2028) ================= -->
+<section data-view="biblio" class="only-28" hidden>
+<div class="wrap biblio-wrap">
+<article class="memo fr-only">
+  <h2>Sources et bibliographie</h2>
+  <p>Les quatre épisodes s'inspirent librement de faits réels, sans les citer. Voici les sources des chiffres et des cas évoqués.</p>
+  <h3>Données citées</h3>
+  <ol class="refs">
+    <li>OCDE (2026), <i>OECD Digital Education Outlook 2026: Exploring Effective Uses of Generative AI in Education</i>. <a href="https://www.oecd.org/en/publications/oecd-digital-education-outlook-2026_062a7394-en.html" target="_blank" rel="noopener">oecd.org</a></li>
+    <li>Synthèse du rapport OCDE par la plateforme européenne Digital Skills and Jobs. <a href="https://digital-skills-jobs.europa.eu/en/latest/news/oecd-digital-education-outlook-2026-how-generative-ai-can-support-learning-when-used" target="_blank" rel="noopener">digital-skills-jobs.europa.eu</a></li>
+    <li>Bastani H. et al. (2025), « Generative AI without guardrails can harm learning », <i>PNAS</i> 122 (26). Chiffres rapportés par Knowledge at Wharton. <a href="https://knowledge.wharton.upenn.edu/article/without-guardrails-generative-ai-can-harm-education/" target="_blank" rel="noopener">knowledge.wharton.upenn.edu</a></li>
+    <li>Alpha School : informations générales (modèle, campus, critiques sur l'absence d'évaluation indépendante). <a href="https://en.wikipedia.org/wiki/Alpha_School" target="_blank" rel="noopener">wikipedia.org</a></li>
+  </ol>
+  <h3>Faits réels ayant inspiré les épisodes</h3>
+  <ol class="refs">
+    <li><b>Note finale.</b> Erreur de notation par IA de l'examen MCAS, Massachusetts (Boston.com, 17 septembre 2025). <a href="https://www.boston.com/news/education/2025/09/17/mcas-essays-scored-incorrectly-ai-mishap/" target="_blank" rel="noopener">boston.com</a></li>
+    <li><b>Note finale.</b> Abandon de l'algorithme de notation des examens au Royaume-Uni (Ofqual, août 2020).</li>
+    <li><b>Lumi.</b> Character.AI ferme les conversations libres aux moins de 18 ans (Fortune, 29 octobre 2025). <a href="https://fortune.com/2025/10/29/character-ai-ban-children-teens-chatbots-regulatory-pressure-age-verification-online-harms" target="_blank" rel="noopener">fortune.com</a></li>
+    <li><b>Lumi.</b> Alpha School (voir ci-dessus) ; UNESCO (2023), <i>Guidance for generative AI in education and research</i> (âge minimum de 13 ans recommandé).</li>
+    <li><b>Score d'authenticité.</b> Affaire Thélyson Orélien et le détecteur Pangram, retrait de la sélection du prix Goncourt (L-Post, septembre 2026). <a href="https://lpost.be/pangram-le-logiciel-qui-a-bouscule-le-goncourt-que-vaut-le-detecteur-dia-au-coeur-de-laffaire-thelyson-orelien/" target="_blank" rel="noopener">lpost.be</a></li>
+    <li><b>Score d'authenticité.</b> Liang W. et al. (2023), « GPT detectors are biased against non-native English writers », <i>Patterns</i>.</li>
+    <li><b>Concierge.</b> Effondrement du chatbot « Ed » de Los Angeles Unified (The 74, 28 juillet 2024). <a href="https://www.the74million.org/article/la-unified-faces-criticism-after-collapse-of-splashy-ai-tool-ed/" target="_blank" rel="noopener">the74million.org</a></li>
+    <li><b>Concierge.</b> Moffatt c. Air Canada, tribunal civil de Colombie-Britannique (février 2024), sur la responsabilité d'une entreprise pour les réponses de son chatbot.</li>
+  </ol>
+</article>
+<article class="memo en-only">
+  <h2>Sources and bibliography</h2>
+  <p>The four episodes are loosely inspired by real events, without citing them. Here are the sources for the figures and cases mentioned.</p>
+  <h3>Data cited</h3>
+  <ol class="refs">
+    <li>OECD (2026), <i>OECD Digital Education Outlook 2026: Exploring Effective Uses of Generative AI in Education</i>. <a href="https://www.oecd.org/en/publications/oecd-digital-education-outlook-2026_062a7394-en.html" target="_blank" rel="noopener">oecd.org</a></li>
+    <li>Summary of the OECD report by the European platform Digital Skills and Jobs. <a href="https://digital-skills-jobs.europa.eu/en/latest/news/oecd-digital-education-outlook-2026-how-generative-ai-can-support-learning-when-used" target="_blank" rel="noopener">digital-skills-jobs.europa.eu</a></li>
+    <li>Bastani H. et al. (2025), "Generative AI without guardrails can harm learning", <i>PNAS</i> 122 (26). Figures as reported by Knowledge at Wharton. <a href="https://knowledge.wharton.upenn.edu/article/without-guardrails-generative-ai-can-harm-education/" target="_blank" rel="noopener">knowledge.wharton.upenn.edu</a></li>
+    <li>Alpha School: general information (model, campuses, criticism over the lack of independent evaluation). <a href="https://en.wikipedia.org/wiki/Alpha_School" target="_blank" rel="noopener">wikipedia.org</a></li>
+  </ol>
+  <h3>Real events that inspired the episodes</h3>
+  <ol class="refs">
+    <li><b>Final Grade.</b> AI scoring error on the MCAS state exam, Massachusetts (Boston.com, 17 September 2025). <a href="https://www.boston.com/news/education/2025/09/17/mcas-essays-scored-incorrectly-ai-mishap/" target="_blank" rel="noopener">boston.com</a></li>
+    <li><b>Final Grade.</b> Abandonment of the exam-grading algorithm in the United Kingdom (Ofqual, August 2020).</li>
+    <li><b>Lumi.</b> Character.AI closes open-ended conversations to users under 18 (Fortune, 29 October 2025). <a href="https://fortune.com/2025/10/29/character-ai-ban-children-teens-chatbots-regulatory-pressure-age-verification-online-harms" target="_blank" rel="noopener">fortune.com</a></li>
+    <li><b>Lumi.</b> Alpha School (see above); UNESCO (2023), <i>Guidance for generative AI in education and research</i> (recommended minimum age of 13).</li>
+    <li><b>Authenticity Score.</b> The Thélyson Orélien affair and the Pangram detector, withdrawal from the Goncourt prize shortlist (L-Post, September 2026). <a href="https://lpost.be/pangram-le-logiciel-qui-a-bouscule-le-goncourt-que-vaut-le-detecteur-dia-au-coeur-de-laffaire-thelyson-orelien/" target="_blank" rel="noopener">lpost.be</a></li>
+    <li><b>Authenticity Score.</b> Liang W. et al. (2023), "GPT detectors are biased against non-native English writers", <i>Patterns</i>.</li>
+    <li><b>Concierge.</b> Collapse of the "Ed" chatbot at Los Angeles Unified (The 74, 28 July 2024). <a href="https://www.the74million.org/article/la-unified-faces-criticism-after-collapse-of-splashy-ai-tool-ed/" target="_blank" rel="noopener">the74million.org</a></li>
+    <li><b>Concierge.</b> Moffatt v. Air Canada, British Columbia Civil Resolution Tribunal (February 2024), on a company's liability for what its chatbot says.</li>
+  </ol>
+</article>
+</div>
+</section>
 <!-- ================= CORRECTA ================= -->
 <section data-view="correcta" class="site site-cr" hidden>
 <div class="notice only-28"><div class="wrap"><svg><use href="#i-alert"/></svg><span><b>Information aux établissements.</b> Des écarts de notation ont été constatés sur certaines épreuves longues corrigées entre le 4 mars et le 6 mai 2028. L'incident est résolu.</span></div></div>
@@ -5084,6 +5216,49 @@ var CONFIG = { etat: 'etat.json', intervalle: 20000 };
       .catch(function(){});
   }
   pollEtat(); setInterval(pollEtat, CONFIG.intervalle || 20000);
+  /* Grille bénéfice-risque : contenu lu dans grille.json (GitHub Pages), comme etat.json.
+     Tant que "publiee" n'est pas true, la grille reste vierge (rubriques sans questions). */
+  (function(){
+    var RUB = [
+      ['boussole', L('Boussole', 'Compass')],
+      ['intention', L('Intention pédagogique', 'Teaching intent')],
+      ['plusvalue', L('Plus-value démontrée', 'Demonstrated added value')],
+      ['preuve', L('Preuve de l\'apprentissage', 'Evidence of learning')],
+      ['responsabilite', L('Responsabilité', 'Accountability')],
+      ['metier', L('Métier et relations', 'Work and relationships')],
+      ['familles', L('Familles', 'Families')],
+      ['donnees', L('Données et dépendance', 'Data and dependence')],
+      ['reversibilite', L('Réversibilité', 'Reversibility')]
+    ];
+    var box = document.getElementById('grilleBox'), last = '';
+    function mk(tag, cls, text){ var n = document.createElement(tag); if (cls) n.className = cls; if (text != null) n.textContent = text; return n; }
+    function render(d){
+      var ok = !!(d && d.publiee === true && Array.isArray(d.questions));
+      var key = ok ? JSON.stringify(d) : 'vierge';
+      if (key === last) return; last = key;
+      box.textContent = '';
+      box.appendChild(mk('p', '', ok
+        ? L('Grille produite avec les participants.', 'Grid produced with the participants.')
+        : L('La grille sera publiée à la fin de l\'atelier.', 'The grid will be published at the end of the workshop.')));
+      RUB.forEach(function(r){
+        var row = mk('section', 'grille-row');
+        row.appendChild(mk('h3', '', r[1]));
+        var ul = mk('ul', '');
+        if (ok) d.questions.forEach(function(q){
+          if (q && q.rubrique === r[0] && typeof q.question === 'string') ul.appendChild(mk('li', '', q.question));
+        });
+        row.appendChild(ul);
+        box.appendChild(row);
+      });
+    }
+    function poll(){
+      if (!window.fetch || !/^https?:$/.test(location.protocol)) { render(null); return; }
+      fetch('grille.json?t=' + Date.now(), {cache: 'no-store'})
+        .then(function(r){ return r.ok ? r.json() : null; })
+        .then(render).catch(function(){ render(null); });
+    }
+    render(null); poll(); setInterval(poll, CONFIG.intervalle || 20000);
+  })();
 
   /* Code atelier saisi par les participants */
   function closeCode(){ $('codeBg').hidden = true; lock(false); }
