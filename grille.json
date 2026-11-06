@@ -1,4 +1,23 @@
 {
   "publiee": true,
-  "questions": []
+  "questions": [
+    { "rubrique": "boussole", "question": "Cet outil sert-il l'intérêt des élèves et de l'établissement, et qui a fixé ces objectifs ?" },
+    { "rubrique": "boussole", "question": "Si l'outil ne sert plus les élèves, qui a l'autorité pour le retirer ?" },
+    { "rubrique": "intention", "question": "L'outil fait-il réfléchir l'élève, ou réfléchit-il à sa place ?" },
+    { "rubrique": "intention", "question": "A-t-il été conçu pour faire apprendre, ou pour produire et retenir l'attention ?" },
+    { "rubrique": "plusvalue", "question": "Quelles preuves de progrès durables, sans l'outil, a-t-on demandées avant l'adoption ?" },
+    { "rubrique": "plusvalue", "question": "Ces résultats sont-ils évalués par quelqu'un d'autre que l'éditeur ?" },
+    { "rubrique": "preuve", "question": "Pourra-t-on encore attester de ce que l'élève sait faire seul ?" },
+    { "rubrique": "preuve", "question": "Un score ou un détecteur peut-il à lui seul prouver un travail personnel ?" },
+    { "rubrique": "responsabilite", "question": "Qui décide, qui signe, et qui répond devant une famille d'une note ou d'une décision prise avec l'IA ?" },
+    { "rubrique": "responsabilite", "question": "Que dit le contrat de l'éditeur sur sa responsabilité en cas d'erreur ?" },
+    { "rubrique": "metier", "question": "Quelles tâches sont déléguées, et quelles relations enseignant-élève ou école-familles sont déplacées ?" },
+    { "rubrique": "metier", "question": "Le poste ou la mission supprimés sont-ils compensés par un accompagnement humain ?" },
+    { "rubrique": "familles", "question": "Les familles savent-elles quand elles échangent avec une IA ?" },
+    { "rubrique": "familles", "question": "Peut-on expliquer et justifier ce choix devant les familles, sans gêne ?" },
+    { "rubrique": "donnees", "question": "Où sont hébergées les données, et qui peut y accéder ?" },
+    { "rubrique": "donnees", "question": "Que devient l'historique si l'outil change de conditions ou disparaît ?" },
+    { "rubrique": "reversibilite", "question": "Peut-on tester sur un périmètre limité, mesurer, puis arrêter ?" },
+    { "rubrique": "reversibilite", "question": "Quels critères d'arrêt fixe-t-on dès le départ ?" }
+  ]
 }
