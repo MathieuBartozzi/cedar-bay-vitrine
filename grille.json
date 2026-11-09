@@ -1,5 +1,5 @@
 {
-  "publiee": true,
+  "publiee": false,
   "questions": [
     { "rubrique": "boussole", "question": "Cet outil sert-il l'intérêt des élèves et de l'établissement, et qui a fixé ces objectifs ?" },
     { "rubrique": "boussole", "question": "Si l'outil ne sert plus les élèves, qui a l'autorité pour le retirer ?" },
